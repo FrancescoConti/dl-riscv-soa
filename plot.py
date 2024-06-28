@@ -8,18 +8,9 @@ import itertools
 import string
 
 dataframe = pd.read_excel('data.xlsx')
-matplotlib.use("pgf")
 matplotlib.rcParams.update({
-    "pgf.texsystem": "pdflatex",
-    'font.family': 'serif',
-    'text.usetex': True,
-    'pgf.rcfonts': False,
-    "pgf.preamble": r"""
-        \usepackage[utf8]{inputenc}
-        \usepackage[T1]{fontenc}
-        \usepackage{amsmath}
-        \usepackage{graphicx}
-    """
+    'font.family':  'sans-serif',
+    'font.sans-serif':['Helvetica']
 })
 
 dataframe = dataframe.replace("-", "NaN")
@@ -72,12 +63,12 @@ symbols = generate_alphabetic_symbols(len(dfclean))
 df = dfclean.sort_values(by=dfclean.columns[5])
 df = df[df[df.columns[5]] >= 10]
 anns = []
-anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"\\textit{{\\textbf{{{symbols[i]}}}}}") for i in range(len(df))])
+anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"\\it{{\\bf{{{symbols[i]}}}}}") for i in range(len(df))])
 
 ss = ""
 for i in range(len(df)):
     s = (df.iloc[i][0]).replace(" ", "~")
-    ss += f"\\textit{{\\bfseries{{{symbols[i]}}}}}: {s},"
+    ss += f"\\it{{\\bf{{{symbols[i]}}}}}: {s},"
 
 x = np.asarray([df.iloc[i][5] for i in range(len(df))])
 y = np.asarray([df.iloc[i][6] for i in range(len(df))])
