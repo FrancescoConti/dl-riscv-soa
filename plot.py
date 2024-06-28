@@ -70,9 +70,17 @@ html_content = """
 <table id="data-table" class="display" style="width:100%">
     <thead>
         <tr>
-            <th>Symbol</th>
+            <th>#</th>
             <th>Name</th>
-            <th>DOI</th>
+            <th>Category</th>
+            <th>Technology node</th>
+            <th>Area [mm2]</th>
+            <th>Power [mW]</th>
+            <th>Performance [GOPS]</th>
+            <th>Efficiency [GOPS/W]</th>
+            <th>Main Data Type</th>
+            <th>Maturity</th>
+            <th>Source</th>
         </tr>
     </thead>
     <tbody>
@@ -80,11 +88,31 @@ html_content = """
 
 for i in range(len(df)):
     name = df.iloc[i][0].replace(" ", "&nbsp;")
+    categ = df.iloc[i][11]
+    tech = df.iloc[i][1]
+    area = df.iloc[i][2]
+    freq = df.iloc[i][3]
+    volt = df.iloc[i][4]
+    pow  = df.iloc[i][5]
+    gops = df.iloc[i][6]
+    eff  = df.iloc[i][7]
+    dtype = df.iloc[i][9]
+    maturity = df.iloc[i][10]
     doi = df.iloc[i][19]
     html_content += f"""
     <tr>
         <td><b><i>{symbols[i]}</i></b></td>
         <td>{name}</td>
+        <td>{categ}</td>
+        <td>{tech}</td>
+        <td>{area}</td>
+        <td>{freq}</td>
+        <td>{volt}</td>
+        <td>{pow}</td>
+        <td>{gops}</td>
+        <td>{eff}</td>
+        <td>{dtype}</td>
+        <td>{maturity}</td>
         <td><a href="https://doi.org/{doi}">{doi}</a></td>
     </tr>
     """

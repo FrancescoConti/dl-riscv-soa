@@ -27,7 +27,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(data => {
             plotInfoDiv.innerHTML = data;
             // Initialize DataTables
-            $('#data-table').DataTable();
+            // $('#data-table').DataTable();
+            new DataTable('#data-table', {
+                pageLength: 100,
+                order: []
+            });
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
