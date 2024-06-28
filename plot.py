@@ -67,8 +67,8 @@ anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"{symbols[i
 
 ss = ""
 for i in range(len(df)):
-    s = (df.iloc[i][0]).replace(" ", "~")
-    ss += f"{symbols[i]}: {s},"
+    s = (df.iloc[i][0]).replace(" ", "&nbsp;") + f"[<a href=https://doi.org/{df.iloc[i][19]}>{df.iloc[i][19]}</a>]<br />"
+    ss += f"<b><i>{symbols[i]}</i></b>: {s},"
 
 x = np.asarray([df.iloc[i][5] for i in range(len(df))])
 y = np.asarray([df.iloc[i][6] for i in range(len(df))])
@@ -82,3 +82,7 @@ adjust_text(anns.tolist(), x, y)
 plt.subplots_adjust(bottom=0.2)
 
 plt.savefig("plot.png", dpi=500)
+
+# Save the ss content to a text file
+with open("plot_info.txt", "w") as file:
+    file.write(ss)
