@@ -38,6 +38,6 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git remote set-url --push origin https://FrancescoConti:$GITHUB_TOKEN@github.com/FrancescoConti/dl-riscv-soa
-        git add plot.png plot_info.txt
+        git add plot.png plot_info.html
         git commit -m 'Update plot' || true
         git push
