@@ -22,7 +22,8 @@ dataframe[dataframe.columns[7]] = (dataframe[dataframe.columns[6]]/dataframe[dat
 
 # round efficiency to 3 significant digits
 Nsig = 3
-dataframe[dataframe.columns[7]].apply(lambda x: round(x, Nsig-int(floor(log10(abs(x))))))
+import math
+dataframe[dataframe.columns[7]] = dataframe[dataframe.columns[7]].apply(lambda x: x if pd.isna(x) else round(x, Nsig-int(math.floor(math.log10(abs(x))))))
 
 # Drop NaN
 dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
