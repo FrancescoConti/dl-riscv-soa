@@ -18,7 +18,7 @@ dataframe.columns = dataframe.columns.astype(str)
 dataframe[dataframe.columns[5]] = dataframe[dataframe.columns[5]].apply(pd.to_numeric, errors='coerce')
 dataframe[dataframe.columns[6]] = dataframe[dataframe.columns[6]].apply(pd.to_numeric, errors='coerce')
 dataframe[dataframe.columns[7]] = dataframe[dataframe.columns[7]].apply(pd.to_numeric, errors='coerce')
-dataframe[dataframe.columns[7]] = dataframe[dataframe.columns[6]]/dataframe[dataframe.columns[5]]*1000
+dataframe[dataframe.columns[7]] = (dataframe[dataframe.columns[6]]/dataframe[dataframe.columns[5]]*1000).round(1)
 
 # Drop NaN
 dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
