@@ -9,7 +9,7 @@ body {
     margin-top: 20px;
 }
 
-#plot-info {
+#plot-info, #plot-method {
     text-align: left;
     font-size: 11pt;
 }
