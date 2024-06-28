@@ -65,24 +65,44 @@ df = df[df[df.columns[5]] >= 10]
 anns = []
 anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"{symbols[i]}", fontstyle='italic', fontweight='bold') for i in range(len(df))])
 
-ss = ""
-for i in range(len(df)):
-    s = (df.iloc[i][0]).replace(" ", "&nbsp;") + f"&nbsp;[<a href=https://doi.org/{df.iloc[i][19]}>{df.iloc[i][19]}</a>]"
-    ss += f"<b><i>{symbols[i]}</i></b>:&nbsp;{s}, "
+# Create HTML table content
+html_content = """
+<table id="data-table" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>DOI</th>
+        </tr>
+    </thead>
+    <tbody>
+"""
 
-x = np.asarray([df.iloc[i][5] for i in range(len(df))])
-y = np.asarray([df.iloc[i][6] for i in range(len(df))])
+for i in range(len(df)):
+    name = df.iloc[i][0].replace(" ", "&nbsp;")
+    doi = df.iloc[i][19]
+    html_content += f"""
+    <tr>
+        <td><b><i>{symbols[i]}</i></b></td>
+        <td>{name}</td>
+        <td><a href="https://doi.org/{doi}">{doi}</a></td>
+    </tr>
+    """
+
+html_content += """
+    </tbody>
+</table>
+"""
+
+# Write the HTML content to a file
+with open("docs/plot_info.html", "w") as file:
+    file.write(html_content)
+
+# Generate plot and save
 plt.text(1e1, 1.1, "100 GOPS/W", rotation=14)
 plt.text(1e1, 1.1e1, "1 TOPS/W", rotation=14)
 plt.text(1e1, 1.1e2, "10 TOPS/W", rotation=14)
 
 adjust_text(anns.tolist(), x, y)
-
-# Adjust layout to make space for the text box
 plt.subplots_adjust(bottom=0.2)
-
-plt.savefig("plot.png", dpi=500)
-
-# Save the ss content to a text file
-with open("plot_info.txt", "w") as file:
-    file.write(ss)
+plt.savefig("docs/plot.png", dpi=500)

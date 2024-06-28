@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    const plotContainer = document.getElementById('plot-container');
+    const plotInfoDiv = document.getElementById('plot-info');
+    
     // Fetch and display the plot image
+    const img = document.createElement('img');
+    img.id = 'plot';
+    img.alt = 'Generated Plot';
     fetch('plot.png')
         .then(response => {
             if (!response.ok) {
@@ -8,21 +14,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return response.blob();
         })
         .then(blob => {
-            const img = document.getElementById('plot');
             img.src = URL.createObjectURL(blob);
+            plotContainer.appendChild(img);
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
 
-    // Fetch and display the plot info
-    const plotInfoDiv = document.getElementById('plot-info');
-    fetch('plot_info.txt')
+    // Fetch and display the plot_info.html content
+    fetch('plot_info.html')
         .then(response => response.text())
         .then(data => {
-            plotInfoDiv.innerHTML = data.replace(/\n/g, '<br>');
+            plotInfoDiv.innerHTML = data;
+            // Initialize DataTables
+            $('#data-table').DataTable();
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
-    });
+});
