@@ -95,7 +95,7 @@ html_content += """
 """
 
 # Write the HTML content to a file
-with open("docs/plot_info.html", "w") as file:
+with open("plot_info.html", "w") as file:
     file.write(html_content)
 
 # Generate plot and save
@@ -105,4 +105,4 @@ plt.text(1e1, 1.1e2, "10 TOPS/W", rotation=14)
 
 adjust_text(anns.tolist(), x, y)
 plt.subplots_adjust(bottom=0.2)
-plt.savefig("docs/plot.png", dpi=500)
+plt.savefig("plot.png", dpi=500)
