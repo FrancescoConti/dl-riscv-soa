@@ -87,7 +87,8 @@ html_content = """
 """
 
 def non_nan_or_dash(s):
-    return s if not pd.isnan(s) else "-"
+    return s if s != "NaN" else "-"
+
 for i in range(len(df)):
     name = df.iloc[i][0].replace(" ", "&nbsp;")
     categ = df.iloc[i][11]
