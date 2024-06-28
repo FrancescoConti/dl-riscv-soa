@@ -37,8 +37,8 @@ plt.grid(which='minor', linestyle=':', linewidth='0.7', color='black')
 plt.grid(which='major', linestyle=':', linewidth='0.8', color='black')
 
 plt.plot((1,1e5), (1e-1, 1e4), linestyle='--', linewidth='0.7', color='black') # 100GOPS/W
-plt.plot((1,1e5), (1, 1e5), linestyle='--', linewidth='0.7', color='black') # 1000GOPS/W
-plt.plot((1,1e5), (1e1, 1e6), linestyle='--', linewidth='0.7', color='black') # 1000GOPS/W
+plt.plot((1,1e5), (1, 1e5),    linestyle='--', linewidth='0.7', color='black') # 1000GOPS/W
+plt.plot((1,1e5), (1e1, 1e6),  linestyle='--', linewidth='0.7', color='black') # 1000GOPS/W
 plt.xlim((1e1,1e5))
 plt.ylim((1, 3e6))
 
@@ -63,12 +63,12 @@ symbols = generate_alphabetic_symbols(len(dfclean))
 df = dfclean.sort_values(by=dfclean.columns[5])
 df = df[df[df.columns[5]] >= 10]
 anns = []
-anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"\\it{{\\bf{{{symbols[i]}}}}}") for i in range(len(df))])
+anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"{symbols[i]}", fontstyle='italic', fontweight='bold') for i in range(len(df))])
 
 ss = ""
 for i in range(len(df)):
     s = (df.iloc[i][0]).replace(" ", "~")
-    ss += f"\\it{{\\bf{{{symbols[i]}}}}}: {s},"
+    ss += f"{symbols[i]}: {s},"
 
 x = np.asarray([df.iloc[i][5] for i in range(len(df))])
 y = np.asarray([df.iloc[i][6] for i in range(len(df))])
@@ -81,4 +81,4 @@ adjust_text(anns.tolist(), x, y)
 # Adjust layout to make space for the text box
 plt.subplots_adjust(bottom=0.2)
 
-plt.savefig("plot.png")
+plt.savefig("plot.png", dpi=500)
