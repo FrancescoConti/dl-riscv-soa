@@ -67,8 +67,8 @@ anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"{symbols[i
 
 ss = ""
 for i in range(len(df)):
-    s = (df.iloc[i][0]).replace(" ", "&nbsp;") + f"[<a href=https://doi.org/{df.iloc[i][19]}>{df.iloc[i][19]}</a>]<br />"
-    ss += f"<b><i>{symbols[i]}</i></b>: {s},"
+    s = (df.iloc[i][0]).replace(" ", "&nbsp;") + f"[<a href=https://doi.org/{df.iloc[i][19]}>{df.iloc[i][19]}</a>]"
+    ss += f"<b><i>{symbols[i]}</i></b>: {s}<br />\n"
 
 x = np.asarray([df.iloc[i][5] for i in range(len(df))])
 y = np.asarray([df.iloc[i][6] for i in range(len(df))])
