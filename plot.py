@@ -103,6 +103,9 @@ plt.text(1e1, 1.1, "100 GOPS/W", rotation=14)
 plt.text(1e1, 1.1e1, "1 TOPS/W", rotation=14)
 plt.text(1e1, 1.1e2, "10 TOPS/W", rotation=14)
 
+x = np.asarray([df.iloc[i][5] for i in range(len(df))])
+y = np.asarray([df.iloc[i][6] for i in range(len(df))])
+
 adjust_text(anns.tolist(), x, y)
 plt.subplots_adjust(bottom=0.2)
 plt.savefig("plot.png", dpi=500)
