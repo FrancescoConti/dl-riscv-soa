@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
 
     // Fetch and display the plot info
+    const plotInfoDiv = document.getElementById('plot-info');
     fetch('plot_info.txt')
         .then(response => response.text())
         .then(data => {
-            const infoContent = document.getElementById('info-content');
-            infoContent.textContent = data;
+            plotInfoDiv.innerHTML = data.replace(/\n/g, '<br>');
         })
         .catch(error => {
-            console.error('Error fetching plot info:', error);
+            console.error('There was a problem with the fetch operation:', error);
         });
-});
+    });
