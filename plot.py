@@ -86,16 +86,18 @@ html_content = """
     <tbody>
 """
 
+def non_nan_or_dash(s):
+    return s if not pd.isnan(s) else "-"
 for i in range(len(df)):
     name = df.iloc[i][0].replace(" ", "&nbsp;")
     categ = df.iloc[i][11]
     tech = df.iloc[i][1]
-    area = df.iloc[i][2]
-    freq = df.iloc[i][3]
-    volt = df.iloc[i][4]
-    pow  = df.iloc[i][5]
-    gops = df.iloc[i][6]
-    eff  = df.iloc[i][7]
+    area = non_nan_or_dash(df.iloc[i][2].round(1))
+    freq = non_nan_or_dash(df.iloc[i][3].round(1))
+    volt = non_nan_or_dash(df.iloc[i][4].round(1))
+    pow  = non_nan_or_dash(df.iloc[i][5].round(1))
+    gops = non_nan_or_dash(df.iloc[i][6].round(1))
+    eff  = non_nan_or_dash(df.iloc[i][7].round(1))
     dtype = df.iloc[i][9]
     maturity = df.iloc[i][10]
     doi = df.iloc[i][19]
@@ -106,8 +108,6 @@ for i in range(len(df)):
         <td>{categ}</td>
         <td>{tech}</td>
         <td>{area}</td>
-        <td>{freq}</td>
-        <td>{volt}</td>
         <td>{pow}</td>
         <td>{gops}</td>
         <td>{eff}</td>
