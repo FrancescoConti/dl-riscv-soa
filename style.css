@@ -9,6 +9,11 @@ body {
     margin-top: 20px;
 }
 
+#plot-info {
+    text-align: left;
+    font-size: 11pt;
+}
+
 #plot {
     width: 80%;
     height: auto;
