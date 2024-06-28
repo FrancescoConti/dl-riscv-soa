@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#plot-container {
+    margin-top: 20px;
+}
+
+#plot {
+    width: 80%;
+    height: auto;
+}
