@@ -191,6 +191,7 @@ def plot_plotly(dataframe):
     document.addEventListener('plotly_click', function(data) {
         var pointIndex = data.points[0].pointIndex;
         window.parent.postMessage({ type: 'plotly_click', pointIndex: pointIndex }, '*');
+        alert("Hello", pointIndex);
     });
     </script>
     """
