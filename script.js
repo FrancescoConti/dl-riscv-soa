@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.error('There was a problem with the fetch operation:', error);
         });
 
-    // Fetch and display the plot_info.html content
-    fetch('plot_info.html')
+    // Fetch and display the table.html content
+    fetch('table.html')
         .then(response => response.text())
         .then(data => {
             plotInfoDiv.innerHTML = data;
