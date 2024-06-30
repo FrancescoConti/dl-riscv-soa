@@ -64,9 +64,9 @@ fig.add_trace(go.Scatter(
 ))
 
 # Add text annotations for the dashed lines
-fig.add_annotation(x=1e1, y=1.1, text="100 GOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
-fig.add_annotation(x=1e1, y=1.1e1, text="1 TOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
-fig.add_annotation(x=1e1, y=1.1e2, text="10 TOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
+fig.add_annotation(x=np.log10(1e1), y=np.log10(1.1), text="100 GOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
+fig.add_annotation(x=np.log10(1e1), y=np.log10(1.1e1), text="1 TOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
+fig.add_annotation(x=np.log10(1e1), y=np.log10(1.1e2), text="10 TOPS/W", showarrow=False, yshift=10, xshift=-20, font=dict(size=10, color="black"))
 
 # Generate alphabetic symbols for annotations
 def generate_alphabetic_symbols(n):
@@ -84,16 +84,16 @@ def generate_alphabetic_symbols(n):
 
 symbols = generate_alphabetic_symbols(len(dfclean))
 
-# # Add annotations to the markers
-# for i, row in enumerate(dfclean):
-#     symbol = symbols[i]
-#     fig.add_annotation(
-#         x=dfclean.iloc[i][5]*1.06,
-#         y=dfclean.iloc[i][6]*1.06,
-#         text=f"<b><i>{symbol}</i></b>",
-#         showarrow=False,
-#         yshift=10
-#     )
+# Add annotations to the markers
+for i, row in enumerate(dfclean):
+    symbol = symbols[i]
+    fig.add_annotation(
+        x=np.log10(dfclean.iloc[i][5]*1.06),
+        y=np.log10(dfclean.iloc[i][6]*1.06),
+        text=f"<b><i>{symbol}</i></b>",
+        showarrow=False,
+        yshift=10
+    )
 
 # Update layout for minor ticks, gridlines, and background
 fig.update_layout(
