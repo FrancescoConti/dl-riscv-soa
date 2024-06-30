@@ -46,4 +46,3 @@ Metis AIPU,12nm,144,800,0.68,3490,52400,15000,-,INT8,Silicon,L2 NPU,,,,x,,x,hage
 Siracusa,16nm,16 (10.1 cluster),360,0.8,332,698,2100,10368 1x8--bit,INT8,Silicon,L1 NPU,x,,x,,,,prasadSiracusa16Nm2024,10.1109/JSSC.2024.3385987
 Occamy,12nm,146 (51.5 compute),1000,0.8,23000,6140,267,432,FP8,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068
 DIANA,22nm,10.24,250,0.8,31,18600,600000,256,Analog,Silicon,L2 NPU,,,,x,,x,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064
-Marsellus,22nm,18.7 (1.9 cluster),420,0.8,123,637,7600,10368 1--bit,INT2,Silicon,L1 NPU,x,,x,,,,conti22124TOPS2023,10.1109/JSSC.2023.3318301
