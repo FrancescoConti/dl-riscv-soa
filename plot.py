@@ -166,11 +166,11 @@ def plot_plotly(dataframe):
     fig.update_layout(
         xaxis=dict(
             minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
-            # range=[1, 5]
+            major=dict(ticklen=4, showgrid=True, gridwidth=0.75, gridcolor='lightgrey'),
         ),
         yaxis=dict(
             minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
-            # range=[0, 6]
+            major=dict(ticklen=4, showgrid=True, gridwidth=0.75, gridcolor='lightgrey'),
         ),
         xaxis_type="log",
         yaxis_type="log",
