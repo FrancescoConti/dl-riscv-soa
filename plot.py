@@ -43,7 +43,7 @@ def plot_plotly(dataframe):
             dfclean.columns[9]: style  # Order of symbol categories
         },
         color_discrete_sequence=[
-            "lightcoral", "lightgreen", "lightsteelblue"],
+            "orangered", "lime", "blue"],
         symbol_sequence=list(symbol_map.values())
     )
 
