@@ -32,10 +32,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 pageLength: 100,
                 order: []
             });
+            window.addEventListener('message', function(event) {
+                if (event.data.type === 'plotly_click') {
+                    var pointIndex = event.data.pointIndex;
+                    var table = $('#data-table').DataTable();
+                    table.rows().deselect();  // Deselect any previously selected rows
+                    table.row(pointIndex).select();  // Select the clicked row
+                }
+            }, false);
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+    
 });
 $(document).ready(function() {
     // Function to handle clicks on plot points
