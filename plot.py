@@ -37,12 +37,14 @@ def create_table(dataframe):
             <tr>
                 <th>Name</th>
                 <th>Category</th>
-                <th>Technology node</th>
+                <th>Tech.</th>
                 <th>Area [mm2]</th>
                 <th>Power [mW]</th>
-                <th>Performance [GOPS]</th>
-                <th>Efficiency [GOPS/W]</th>
-                <th>Main Data Type</th>
+                <th>Perf. [GOPS]</th>
+                <th>Eff. [GOPS/W]</th>
+                <th>Data Type</th>
+                <th>Architecture</th>
+                <th>IMC</th>
                 <th>Maturity</th>
                 <th>Source</th>
             </tr>
@@ -63,6 +65,8 @@ def create_table(dataframe):
         pow  = non_nan_or_dash(df.iloc[i][5])
         gops = non_nan_or_dash(df.iloc[i][6])
         eff  = non_nan_or_dash(df.iloc[i][7])
+        arch = non_nan_or_dash(df.iloc[i][11])
+        imc  = non_nan_or_dash(df.iloc[i][17])
         dtype = df.iloc[i][9]
         maturity = df.iloc[i][10]
         doi = df.iloc[i][19]
@@ -75,6 +79,8 @@ def create_table(dataframe):
             <td>{pow}</td>
             <td>{gops}</td>
             <td>{eff}</td>
+            <td>{arch}</td>
+            <td>{imc}</td>
             <td>{dtype}</td>
             <td>{maturity}</td>
             <td><a href="https://doi.org/{doi}">{doi}</a></td>
