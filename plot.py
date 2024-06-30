@@ -85,16 +85,33 @@ def generate_alphabetic_symbols(n):
 
 symbols = generate_alphabetic_symbols(len(dfclean))
 
-# Add annotations to the markers
-for i, row in enumerate(dfclean):
-    symbol = symbols[i]
-    fig.add_annotation(
-        x=dfclean.iloc[i][5]*1.06,
-        y=dfclean.iloc[i][6]*1.06,
-        text=f"<b><i>{symbol}</i></b>",
-        showarrow=False,
-        yshift=10
-    )
+# # Add annotations to the markers
+# for i, row in enumerate(dfclean):
+#     symbol = symbols[i]
+#     fig.add_annotation(
+#         x=dfclean.iloc[i][5]*1.06,
+#         y=dfclean.iloc[i][6]*1.06,
+#         text=f"<b><i>{symbol}</i></b>",
+#         showarrow=False,
+#         yshift=10
+#     )
+
+# Update layout for minor ticks, gridlines, and background
+fig.update_layout(
+    xaxis=dict(
+        minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
+        range=[1, 5]
+    ),
+    yaxis=dict(
+        minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
+        range=[0, 6]
+    ),
+    xaxis_type="log",
+    yaxis_type="log",
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+    font=dict(color='black')
+)
 
 # Save the interactive plot as an HTML file
 fig.write_html('plot.html')
