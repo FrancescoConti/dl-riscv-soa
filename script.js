@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const plotContainer = document.getElementById('plot-container');
+    const plotContainer = document.getElementById('static-plot-container');
     const plotInfoDiv = document.getElementById('plot-info');
     
     // Fetch and display the plot image
