@@ -91,7 +91,6 @@ for i, row in enumerate(dfclean):
     fig.add_annotation(
         x=dfclean.iloc[i][5]*1.06,
         y=dfclean.iloc[i][6]*1.06,
-        hover_name=dfclean.iloc[i][0], 
         text=f"<b><i>{symbol}</i></b>",
         showarrow=False,
         yshift=10
