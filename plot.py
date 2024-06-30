@@ -38,7 +38,7 @@ fig = px.scatter(
         dfclean.columns[9]: style  # Order of symbol categories
     },
     color_discrete_sequence=[
-        "LightRed", "LightGreen", "LightBlue"],
+        "lightcoral", "lightgreen", "lightsteelblue"],
     symbol_sequence=list(symbol_map.values())
 )
 
