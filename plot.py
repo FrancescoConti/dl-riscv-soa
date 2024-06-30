@@ -37,7 +37,6 @@ fig = px.scatter(
         dfclean.columns[10]: ["silicon", "pre-silicon", "simulation"],  # Order of color categories
         dfclean.columns[9]: style  # Order of symbol categories
     },
-    color='species',
     symbol_sequence=list(symbol_map.values())
 )
 
