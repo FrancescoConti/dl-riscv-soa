@@ -36,7 +36,7 @@ def create_table(dataframe):
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Category</th>
+                <th>Architecture</th>
                 <th>Tech.</th>
                 <th>Area [mm2]</th>
                 <th>Power [mW]</th>
@@ -67,7 +67,7 @@ def create_table(dataframe):
         pow  = non_nan_or_dash(df.iloc[i][5])
         gops = non_nan_or_dash(df.iloc[i][6])
         eff  = non_nan_or_dash(df.iloc[i][7])
-        arch = non_nan_or_dash(df.iloc[i][11])
+        # arch = non_nan_or_dash(df.iloc[i][11])
         imc  = non_nan_or_empty(df.iloc[i][17])
         dtype = df.iloc[i][9]
         maturity = df.iloc[i][10]
@@ -82,7 +82,6 @@ def create_table(dataframe):
             <td>{gops}</td>
             <td>{eff}</td>
             <td>{dtype}</td>
-            <td>{arch}</td>
             <td>{imc}</td>
             <td>{maturity}</td>
             <td><a href="https://doi.org/{doi}">{doi}</a></td>
