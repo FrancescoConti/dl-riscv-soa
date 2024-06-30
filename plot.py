@@ -53,7 +53,9 @@ def create_table(dataframe):
     """
 
     def non_nan_or_dash(s):
-        return s if s != "NaN" else "-"
+        return s if s != "NaN" and s != "nan" else "-"
+    def non_nan_or_empty(s):
+        return s if s != "NaN" and s != "nan" else ""
 
     for i in range(len(df)):
         name = df.iloc[i][0].replace(" ", "&nbsp;")
@@ -66,7 +68,7 @@ def create_table(dataframe):
         gops = non_nan_or_dash(df.iloc[i][6])
         eff  = non_nan_or_dash(df.iloc[i][7])
         arch = non_nan_or_dash(df.iloc[i][11])
-        imc  = non_nan_or_dash(df.iloc[i][17])
+        imc  = non_nan_or_empty(df.iloc[i][17])
         dtype = df.iloc[i][9]
         maturity = df.iloc[i][10]
         doi = df.iloc[i][19]
@@ -79,9 +81,9 @@ def create_table(dataframe):
             <td>{pow}</td>
             <td>{gops}</td>
             <td>{eff}</td>
+            <td>{dtype}</td>
             <td>{arch}</td>
             <td>{imc}</td>
-            <td>{dtype}</td>
             <td>{maturity}</td>
             <td><a href="https://doi.org/{doi}">{doi}</a></td>
         </tr>
