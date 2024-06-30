@@ -37,7 +37,8 @@ fig = px.scatter(
         dfclean.columns[10]: ["silicon", "pre-silicon", "simulation"],  # Order of color categories
         dfclean.columns[9]: style  # Order of symbol categories
     },
-    color_discrete_map=color_map,
+    color_discrete_sequence=[
+        "LightRed", "LightGreen", "LightBlue"],
     symbol_sequence=list(symbol_map.values())
 )
 
@@ -100,11 +101,11 @@ symbols = generate_alphabetic_symbols(len(dfclean))
 fig.update_layout(
     xaxis=dict(
         minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
-        range=[1, 5]
+        # range=[1, 5]
     ),
     yaxis=dict(
         minor=dict(ticklen=4, showgrid=True, gridwidth=0.5, gridcolor='lightgrey'),
-        range=[0, 6]
+        # range=[0, 6]
     ),
     xaxis_type="log",
     yaxis_type="log",
