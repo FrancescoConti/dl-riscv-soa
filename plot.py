@@ -20,7 +20,7 @@ dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
 # Define custom marker styles
 style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
 symbol_map = {s: i for i, s in enumerate(style)}
-color_map = {"silicon": "red", "pre-silicon": "green", "simulation": "blue"}
+color_map = {"silicon": "Red", "pre-silicon": "Green", "simulation": "Blue"}
 
 # Create the interactive plot
 fig = px.scatter(
@@ -37,6 +37,7 @@ fig = px.scatter(
         dfclean.columns[10]: ["silicon", "pre-silicon", "simulation"],  # Order of color categories
         dfclean.columns[9]: style  # Order of symbol categories
     },
+    color_discrete_map=color_map,
     symbol_sequence=list(symbol_map.values())
 )
 
@@ -84,16 +85,16 @@ def generate_alphabetic_symbols(n):
 
 symbols = generate_alphabetic_symbols(len(dfclean))
 
-# Add annotations to the markers
-for i, row in enumerate(dfclean):
-    symbol = symbols[i]
-    fig.add_annotation(
-        x=np.log10(dfclean.iloc[i][5]*1.06),
-        y=np.log10(dfclean.iloc[i][6]*1.06),
-        text=f"<b><i>{symbol}</i></b>",
-        showarrow=False,
-        yshift=10
-    )
+# # Add annotations to the markers
+# for i, row in enumerate(dfclean):
+#     symbol = symbols[i]
+#     fig.add_annotation(
+#         x=np.log10(dfclean.iloc[i][5]*1.06),
+#         y=np.log10(dfclean.iloc[i][6]*1.06),
+#         text=f"<b><i>{symbol}</i></b>",
+#         showarrow=False,
+#         yshift=10
+#     )
 
 # Update layout for minor ticks, gridlines, and background
 fig.update_layout(
