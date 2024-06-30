@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.error('There was a problem with the fetch operation:', error);
         });
 });
-
-document.ready(function() {
+$(document).ready(function() {
     // Function to handle clicks on plot points
     window.addEventListener('message', function(event) {
         if (event.data.type === 'plotly_click') {
