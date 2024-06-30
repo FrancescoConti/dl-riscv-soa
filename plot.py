@@ -23,7 +23,7 @@ def create_table(dataframe):
     dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
 
     # round efficiency to 3 significant digits
-    Nsig = 3
+    Nsig = 2
     import math
     dfclean[dataframe.columns[7]] = dfclean[dataframe.columns[7]].apply(lambda x: x if pd.isna(x) else round(x, Nsig-int(math.floor(math.log10(abs(x))))))
 
@@ -183,8 +183,19 @@ def plot_plotly(dataframe):
         line=dict(width=2,
                 color='DarkSlateGrey')),
                 selector=dict(mode='markers'))
-    # Save the interactive plot as an HTML file
-    fig.write_html('plot.html')
+
+    # Save the interactive plot as an HTML file with custom JavaScript
+    plot_html = fig.to_html(full_html=False, include_plotlyjs='cdn')
+    custom_js = """
+    <script>
+    document.addEventListener('plotly_click', function(data) {
+        var pointIndex = data.points[0].pointIndex;
+        window.parent.postMessage({ type: 'plotly_click', pointIndex: pointIndex }, '*');
+    });
+    </script>
+    """
+    with open('plot.html', 'w') as f:
+        f.write(plot_html + custom_js)
 
 def plot_matplotlib(dataframe):
     matplotlib.rcParams.update({
