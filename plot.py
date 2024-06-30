@@ -112,7 +112,7 @@ fig.update_layout(
     font=dict(color='black')
 )
 fig.update_traces(
-    marker=dict(size=12,
+    marker=dict(size=10,
     line=dict(width=2,
              color='DarkSlateGrey')),
              selector=dict(mode='markers'))
