@@ -26,16 +26,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(response => response.text())
         .then(data => {
             plotInfoDiv.innerHTML = data;
-            // Initialize DataTables
-            // $('#data-table').DataTable();
-            new DataTable('#data-table', {
+            const table = new DataTable('#data-table', {
                 pageLength: 100,
                 order: []
             });
+
+            // Function to handle clicks on plot points
             window.addEventListener('message', function(event) {
                 if (event.data.type === 'plotly_click') {
-                    var pointIndex = event.data.pointIndex;
-                    var table = $('#data-table').DataTable();
+                    const pointIndex = event.data.pointIndex;
                     table.rows().deselect();  // Deselect any previously selected rows
                     table.row(pointIndex).select();  // Select the clicked row
                 }
@@ -44,16 +43,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
-    
-});
-$(document).ready(function() {
-    // Function to handle clicks on plot points
-    window.addEventListener('message', function(event) {
-        if (event.data.type === 'plotly_click') {
-            var pointIndex = event.data.pointIndex;
-            var table = $('#data-table').DataTable();
-            table.rows().deselect();  // Deselect any previously selected rows
-            table.row(pointIndex).select();  // Select the clicked row
-        }
-    }, false);
 });
