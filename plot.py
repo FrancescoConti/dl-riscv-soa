@@ -125,7 +125,7 @@ def plot_plotly(dataframe):
         hover_name=dfclean.columns[0], 
         log_x=True, 
         log_y=True,
-        title="Interactive Data Plot",
+        title="Performance, power, and efficiency evaluated in highest-performance reported operating point. If one of performance/power/efficiency is missing, it is derived from the other two. 1 MAC = 2 OPs in all reported precision types. In case of multiple precisions reported, one or more representative ones were selected.",
         color=dfclean.columns[10],  # Assuming this column represents maturity
         symbol=dfclean.columns[9],  # Assuming this column represents the style labels
         custom_data=['id'],  # Add the 'id' column as custom data
