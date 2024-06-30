@@ -9,6 +9,87 @@ import matplotlib
 import itertools
 import string
 
+def create_table(dataframe):
+
+    # Clean the data
+    dataframe = dataframe.replace("-", "NaN")
+    dataframe.columns = dataframe.columns.astype(str)
+    dataframe[dataframe.columns[5]] = dataframe[dataframe.columns[5]].apply(pd.to_numeric, errors='coerce')
+    dataframe[dataframe.columns[6]] = dataframe[dataframe.columns[6]].apply(pd.to_numeric, errors='coerce')
+    dataframe[dataframe.columns[7]] = dataframe[dataframe.columns[7]].apply(pd.to_numeric, errors='coerce')
+    dataframe[dataframe.columns[7]] = dataframe[dataframe.columns[6]] / dataframe[dataframe.columns[5]] * 1000
+
+    # Drop NaN values
+    dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
+
+    # round efficiency to 3 significant digits
+    Nsig = 3
+    import math
+    dfclean[dataframe.columns[7]] = dfclean[dataframe.columns[7]].apply(lambda x: x if pd.isna(x) else round(x, Nsig-int(math.floor(math.log10(abs(x))))))
+
+    # Add labels to the markers
+    df = dfclean.sort_values(by=dfclean.columns[5])
+
+    # Create HTML table content
+    html_content = """
+    <table id="data-table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Technology node</th>
+                <th>Area [mm2]</th>
+                <th>Power [mW]</th>
+                <th>Performance [GOPS]</th>
+                <th>Efficiency [GOPS/W]</th>
+                <th>Main Data Type</th>
+                <th>Maturity</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+    """
+
+    def non_nan_or_dash(s):
+        return s if s != "NaN" else "-"
+
+    for i in range(len(df)):
+        name = df.iloc[i][0].replace(" ", "&nbsp;")
+        categ = df.iloc[i][11]
+        tech = df.iloc[i][1]
+        area = non_nan_or_dash(df.iloc[i][2])
+        freq = non_nan_or_dash(df.iloc[i][3])
+        volt = non_nan_or_dash(df.iloc[i][4])
+        pow  = non_nan_or_dash(df.iloc[i][5])
+        gops = non_nan_or_dash(df.iloc[i][6])
+        eff  = non_nan_or_dash(df.iloc[i][7])
+        dtype = df.iloc[i][9]
+        maturity = df.iloc[i][10]
+        doi = df.iloc[i][19]
+        html_content += f"""
+        <tr>
+            <td>{name}</td>
+            <td>{categ}</td>
+            <td>{tech}</td>
+            <td>{area}</td>
+            <td>{pow}</td>
+            <td>{gops}</td>
+            <td>{eff}</td>
+            <td>{dtype}</td>
+            <td>{maturity}</td>
+            <td><a href="https://doi.org/{doi}">{doi}</a></td>
+        </tr>
+        """
+
+    html_content += """
+        </tbody>
+    </table>
+    """
+
+    # Write the HTML content to a file
+    with open("table.html", "w") as file:
+        file.write(html_content)
+
 def plot_plotly(dataframe):
 
     # Clean the data
@@ -162,68 +243,6 @@ def plot_matplotlib(dataframe):
     anns = []
     anns = np.asarray([plt.text(df.iloc[i][5]*1.06, df.iloc[i][6]*1.06, f"{symbols[i]}", fontstyle='italic', fontweight='bold') for i in range(len(df))])
 
-    # Create HTML table content
-    html_content = """
-    <table id="data-table" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Technology node</th>
-                <th>Area [mm2]</th>
-                <th>Power [mW]</th>
-                <th>Performance [GOPS]</th>
-                <th>Efficiency [GOPS/W]</th>
-                <th>Main Data Type</th>
-                <th>Maturity</th>
-                <th>Source</th>
-            </tr>
-        </thead>
-        <tbody>
-    """
-
-    def non_nan_or_dash(s):
-        return s if s != "NaN" else "-"
-
-    for i in range(len(df)):
-        name = df.iloc[i][0].replace(" ", "&nbsp;")
-        categ = df.iloc[i][11]
-        tech = df.iloc[i][1]
-        area = non_nan_or_dash(df.iloc[i][2])
-        freq = non_nan_or_dash(df.iloc[i][3])
-        volt = non_nan_or_dash(df.iloc[i][4])
-        pow  = non_nan_or_dash(df.iloc[i][5])
-        gops = non_nan_or_dash(df.iloc[i][6])
-        eff  = non_nan_or_dash(df.iloc[i][7])
-        dtype = df.iloc[i][9]
-        maturity = df.iloc[i][10]
-        doi = df.iloc[i][19]
-        html_content += f"""
-        <tr>
-            <td><b><i>{symbols[i]}</i></b></td>
-            <td>{name}</td>
-            <td>{categ}</td>
-            <td>{tech}</td>
-            <td>{area}</td>
-            <td>{pow}</td>
-            <td>{gops}</td>
-            <td>{eff}</td>
-            <td>{dtype}</td>
-            <td>{maturity}</td>
-            <td><a href="https://doi.org/{doi}">{doi}</a></td>
-        </tr>
-        """
-
-    html_content += """
-        </tbody>
-    </table>
-    """
-
-    # Write the HTML content to a file
-    with open("table.html", "w") as file:
-        file.write(html_content)
-
     # Generate plot and save
     plt.text(1e1, 1.1, "100 GOPS/W", rotation=14)
     plt.text(1e1, 1.1e1, "1 TOPS/W", rotation=14)
@@ -241,3 +260,4 @@ def plot_matplotlib(dataframe):
 dataframe = pd.read_excel('data.xlsx')
 plot_plotly(dataframe)
 plot_matplotlib(dataframe)
+create_table(dataframe)
