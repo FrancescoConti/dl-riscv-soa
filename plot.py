@@ -274,7 +274,7 @@ def plot_matplotlib(dataframe):
 
 
 # Read the Excel file
-dataframe = pd.read_excel('data.xlsx')
+dataframe = pd.read_csv('data.csv')
 plot_plotly(dataframe)
 plot_matplotlib(dataframe)
 create_table(dataframe)
