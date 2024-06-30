@@ -89,9 +89,10 @@ symbols = generate_alphabetic_symbols(len(dfclean))
 for i, row in enumerate(dfclean):
     symbol = symbols[i]
     fig.add_annotation(
-        x=row[dfclean.columns[5]],
-        y=row[dfclean.columns[6]],
-        text=f"<b>{symbol}</b>",
+        x=dfclean.iloc[i][5]*1.06,
+        y=dfclean.iloc[i][6]*1.06,
+        hover_name=dfclean.iloc[i][0], 
+        text=f"<b><i>{symbol}</i></b>",
         showarrow=False,
         yshift=10
     )
