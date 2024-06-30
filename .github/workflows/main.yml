@@ -14,10 +14,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # - name: Install LaTeX
-    #   run: |
-    #     sudo apt install cm-super dvipng texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra dvipng
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -28,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Generate plot
+    - name: Generate plot and table
       run: python plot.py
 
     - name: Commit and push changes
@@ -37,7 +33,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git remote set-url --push origin https://FrancescoConti:$GITHUB_TOKEN@github.com/FrancescoConti/dl-riscv-soa
-        git add plot.png plot_info.html
-        git commit -m 'Update plot' || true
+        git add plot.html table.html
+        git commit -m 'Update plot and table'
         git push
