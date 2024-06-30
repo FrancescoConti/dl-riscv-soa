@@ -37,7 +37,7 @@ fig = px.scatter(
         dfclean.columns[10]: ["silicon", "pre-silicon", "simulation"],  # Order of color categories
         dfclean.columns[9]: style  # Order of symbol categories
     },
-    color_discrete_map=color_map,
+    color='species',
     symbol_sequence=list(symbol_map.values())
 )
 
@@ -112,7 +112,11 @@ fig.update_layout(
     paper_bgcolor='white',
     font=dict(color='black')
 )
-
+fig.update_traces(
+    marker=dict(size=12,
+    line=dict(width=2,
+             color='DarkSlateGrey')),
+             selector=dict(mode='markers'))
 # Save the interactive plot as an HTML file
 fig.write_html('plot.html')
 
