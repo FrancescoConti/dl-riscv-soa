@@ -86,7 +86,7 @@ def generate_alphabetic_symbols(n):
 symbols = generate_alphabetic_symbols(len(dfclean))
 
 # Add annotations to the markers
-for i, row in dfclean.iterrows():
+for i, row in enumerate(dfclean):
     symbol = symbols[i]
     fig.add_annotation(
         x=row[dfclean.columns[5]],
