@@ -190,26 +190,8 @@ def plot_plotly(dataframe):
 
     # Save the interactive plot as an HTML file with custom JavaScript
     plot_html = fig.to_html(full_html=False, include_plotlyjs='cdn')
-    custom_js = """
-    <script>
-    document.addEventListener('plotly_click', function(data) {
-        var pointIndex = data.points[0].pointIndex;
-        window.parent.postMessage({ type: 'plotly_click', pointIndex: pointIndex }, '*');
-    });
-
-    window.addEventListener('message', function(event) {
-        if (event.data.type === 'highlight_points') {
-            var ids = event.data.ids;
-            var update = {
-                marker: { opacity: ids.includes(pointIndex) ? 1 : 0.3 }
-            };
-            Plotly.restyle('plot', update);
-        }
-    });
-    </script>
-    """
     with open('plot.html', 'w') as f:
-        f.write(plot_html + custom_js)
+        f.write(plot_html)
 
 def plot_matplotlib(dataframe):
     matplotlib.rcParams.update({
