@@ -109,6 +109,9 @@ def plot_plotly(dataframe):
     # Drop NaN values
     dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
 
+    # Add an 'id' column to uniquely identify each row
+    dfclean['id'] = dfclean.index
+
     # Define custom marker styles
     style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
     symbol_map = {s: i for i, s in enumerate(style)}
@@ -125,6 +128,7 @@ def plot_plotly(dataframe):
         title="Interactive Data Plot",
         color=dfclean.columns[10],  # Assuming this column represents maturity
         symbol=dfclean.columns[9],  # Assuming this column represents the style labels
+        custom_data=['id'],  # Add the 'id' column as custom data
         category_orders={
             dfclean.columns[10]: ["silicon", "pre-silicon", "simulation"],  # Order of color categories
             dfclean.columns[9]: style  # Order of symbol categories
@@ -191,7 +195,16 @@ def plot_plotly(dataframe):
     document.addEventListener('plotly_click', function(data) {
         var pointIndex = data.points[0].pointIndex;
         window.parent.postMessage({ type: 'plotly_click', pointIndex: pointIndex }, '*');
-        alert("Hello", pointIndex);
+    });
+
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'highlight_points') {
+            var ids = event.data.ids;
+            var update = {
+                marker: { opacity: ids.includes(pointIndex) ? 1 : 0.3 }
+            };
+            Plotly.restyle('plot', update);
+        }
     });
     </script>
     """
