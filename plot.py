@@ -43,7 +43,6 @@ def create_table(dataframe):
                 <th>Perf. [GOPS]</th>
                 <th>Eff. [GOPS/W]</th>
                 <th>Data Type</th>
-                <th>Architecture</th>
                 <th>IMC</th>
                 <th>Maturity</th>
                 <th>Source</th>
@@ -55,7 +54,7 @@ def create_table(dataframe):
     def non_nan_or_dash(s):
         return s if s != "NaN" and s != "nan" else "-"
     def non_nan_or_empty(s):
-        return s if s != "NaN" and s != "nan" else ""
+        return s if s != "NaN" and s != "nan" else " "
 
     for i in range(len(df)):
         name = df.iloc[i][0].replace(" ", "&nbsp;")
