@@ -15,8 +15,10 @@
         <iframe id="plot-frame" src="plot.html" width="100%" height="600px" frameBorder="0"></iframe>
     </div>
     <div id="plot-method">
-        <p><em>Methodology</em>: Performance, power, and efficiency evaluated in highest-performance reported operating point. If one of performance/power/efficiency is missing, it is derived from the other two. 1 MAC = 2 OPs in all reported precision types. In case of multiple precisions reported, one or more representative ones were selected. </p>
-        <p>Please insert an issue <a href="https://github.com/FrancescoConti/dl-riscv-soa/issues">HERE</a> in case of erroneous/misleading/incomplete data.</p>
+        <h5>Methodology</h5>
+        <p>For consistency, performance, power, and energy efficiency are evaluated in the highest-performance operating point: notice that this means usually the chart and table <em>do not report the peak efficiency</em> of the original publication, which in most cases uses a more efficient, lower-performance operating point. If one of performance/power/efficiency is missing, it is derived from the other two. We consider 1 MAC = 2 OPs in all reported precision types. In case of multiple precisions reported, one or more representative ones were selected. </p>
+        <p>We distinguish between three "maturities": <em>silicon</em>, <em>pre-silicon</em>, and <em>simulation</em>. We report as <em>silicon</em> those prototypes or products for which our source (typically, an academic paper) reports measurements (performance, power, area) and typically a picture of the fabricated chip (e.g., Siracusa). We report as <em>pre-silicon</em> all architectures for which a detailed analysis of performance, power, and area has been performed through logic and physical synthesis (e.g., Archimedes). Finally, we consider <em>simulation</em> all architectures that are explicitly modeling a system (e.g., Bruschi&nbsp;et&nbsp;al.) as well as those for which our source does not report enough information to understand if logic and physical synthesis where performed.</p>
+        <p>Please insert an issue <a href="https://github.com/FrancescoConti/dl-riscv-soa/issues">HERE</a> in case of erroneous/misleading/incomplete data, or if you want to report a new architecture that is not yet in the plot.</p>
     </div>
     <div id="plot-info">
         <pre id="info-content"></pre>
