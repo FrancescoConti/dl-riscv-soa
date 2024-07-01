@@ -1,49 +1,49 @@
-﻿Accelerator,Tech [nm],Area [mm2],Freq [MHz],Voltage [V],Power [mW],Perf [GOPS],Energy Efficiency [GOPS/W],,Data Type,Maturity,Dominant Kind,ISA,Vector,L1 NPU,L2 NPU,L3 NPU,IMC,Zotero key,DOI
-SNCPU,65nm,4.47,400,1,116,75.9,655,100,INT8,Silicon,L2 NPU,,,,x,,,juSystolicNeuralCPU2023,10.1109/JSSC.2022.3214170
-Dustin,65nm,10,205,1.2,156,33.6,215,128,INT2 x INT4,Silicon,ISA,x,,,,,,ottaviDustin16CoresParallel2023,10.1109/TCSI.2023.3254810
-Darkside,65nm,3.85,200,1.2,89.1,12.6,152,32,FP16,Silicon,L1 NPU,x,,x,,,,garofaloDARKSIDEHeterogeneousRISCV2022,10.1109/OJSSCS.2022.3210082
-SamurAI,28nm,4.52,350,0.9,94.7,36,380,64,INT8,Silicon,L2 NPU,,,,x,,,miro-panadesSamurAIVersatileIoT2022,10.1109/JSSC.2022.3198505
-Gemmini,22nm,1.03,1000,-,-,-,-,256,INT8,Pre-silicon,L2 NPU,,,,x,,,gencGemminiEnablingSystematic2021,10.1109/DAC18074.2021.9586216
-AVA,22nm,3.9,-,-,-,-,-,-,FP64,Pre-silicon,Vector,,x,,,,,lazoAdaptableRegisterFile2022,10.1109/HPCA53966.2022.00063
-Marsellus,22nm,18.7 (1.9 cluster),420,0.8,123,637,7600,10368 1--bit,INT2,Silicon,L1 NPU,x,,x,,,,conti22124TOPS2023,10.1109/JSSC.2023.3318301
-Garofalo et al.,22nm,30,500,0.8,150,958,6390,36 (DW),Analog,Pre-silicon,L1 NPU,x,,x,,,x,garofaloHeterogeneousInMemoryComputing2022,10.1109/JETCAS.2022.3170152
-DIANA,22nm,10.24,250,0.8,132,230,1740,256,INT8,Silicon,L2 NPU,,,,x,,,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064
-TinyVers,22nm,6.25,150,0.8,20,17.6,863,64,INT8,Silicon,L2 NPU,,,,x,,,jainTinyVersTinyVersatile2023,10.1109/JSSC.2023.3236566
-Kraken,22nm,9,330,0.8,300,75,750,128,INT2,Silicon,ISA,x,,x,,,,dimauroKrakenDirectEvent2022,10.48550/arXiv.2209.01065
-Vega,22nm,12,450,0.8,49.4,32.2,651,27,INT8,Silicon,ISA,x,,x,,,,rossiVegaTenCoreSoC2022,10.1109/JSSC.2021.3114881
-RedMulE,22nm,0.73,613,0.8,193,117,608,96,FP16,Pre-silicon,L1 NPU,,,x,,,,tortorellaRedMuleMixedPrecisionMatrixMatrix2023,10.48550/arXiv.2301.03904
-Spatz,22nm,20,594,0.8,1070,285,266,256,INT32,Pre-silicon,Vector,,x,,,,,cavalcanteSpatzCompactVector2022,10.1145/3508352.3549367
-Manticore,22nm,888,500,0.6,200,25,188,24,FP64,Pre-silicon,ISA,x,,,,,,zarubaManticore4096CoreRISCV2021,10.1109/MM.2020.3045564
-Gonzalez et al.,22nm,16,961,-,-,-,106.1,256,INT8,Silicon,L3 NPU,,,,,x,,gonzalez16mm106GOPS2021,10.1109/ESSCIRC53450.2021.9567768
-Vitruvius+,22nm,1.3,1400,0.8,459,21.7,47.3,8,FP64,Pre-silicon,Vector,,x,,,,,minerviniVitruviusAreaEfficientRISCV2023,10.1145/3575861
-Ara,22nm,10735 kGE,1040,0.8,794,32.4,40.8,16,FP64,Pre-silicon,Vector,,x,,,,,cavalcanteAra1GHzScalable2020,10.1109/TVLSI.2019.2950087
-NewAra,22nm,0.81,1340,0.8,280,10.4,37.1,4,FP64,Pre-silicon,Vector,,x,,,,,perottiNewAraVector2022,10.1109/ASAP54787.2022.00017
-Archimedes,22nm,3.38,270,0.65,112,1198,10.6,5184,INT2 x INT8,Pre-silicon,L1 NPU,,,x,,,,prasadSpecializationMeetsFlexibility,10.1109/DAC56929.2023.10247945
-Celerity,16nm,25,1050,-,1900,-,-,496,INT32,Silicon,ISA,x,,,,,,davidsonCelerityOpenSource511Core2018,10.1109/MM.2018.022071133
-Simba,16nm,6,161,0.42,-,-,9100,1024,INT8,Silicon,L2 NPU,,,,x,,,shaoSimbaScalingDeepLearning2019,10.1145/3352460.3358302
-ESP,12nm,21.6,1520,1,1830,-,-,3x NVDLA,INT8,Silicon,L3 NPU,,,,,x,,jia12nmAgileDesignedSoC2022,10.1109/ESSCIRC55480.2022.9911456
-Tenstorrent,12nm,477,-,-,-,92000,-,-,FP16,Silicon,ISA,x,,,,,,vasiljevicComputeSubstrateSoftware2021,10.1109/MM.2021.3061912
-Tambe et al.,12nm,4.59,717,1,111,734,6612,,FP4,Silicon,L2 NPU,,,,x,,,tambe2212nm182023,10.1109/ISSCC42615.2023.10067817
-exSDOTP,12nm,0.52,1260,0.8,278,160,575,16,FP8,Pre-silicon,ISA,x,,,,,,bertacciniMiniFloatNNExSdotpISA2022,10.1109/ARITH54963.2022.00010
-Esperanto,7nm,570,1000,-,20000,139000,6.95,69632,INT8,Silicon,ISA,x,,,,,,ditzelAcceleratingMLRecommendation2022,10.1109/MM.2022.3140674
-Bruschi et al.,5nm,480,-,-,3070,20000,6500,3.35E+07,Analog,Simulation,L1 NPU,x,,x,,,x,bruschiEndtoEndDNNInference2022,10.48550/arXiv.2211.12877
-CNC,4nm,1.92,1150,0.85,510,75.8,149,512,INT8,Silicon,ISA,x,,,,,,chenEightCoreRISCVProcessor2022,10.1109/JSSC.2022.3228765
-Siracusa,16nm,16 (10.1 cluster),360,0.8,332,1950,7000,10368 1x8--bit,INT2 x INT8,Silicon,L1 NPU,x,,x,,,,prasadSiracusa16Nm2024,10.1109/JSSC.2024.3385987
-Occamy,12nm,146 (51.5 compute),1000,0.8,23000,770,28.1,432,FP64,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068
-Vecim,65nm,4,250,1,110,25.3,230,4,FP16,Silicon,Vector,,x,,,,x,wang30Vecim2892024,10.1109/ISSCC49657.2024.10454387
-Dos Santos et al.,12nm,64,1600,1,4330,-,-,4x NVDLA,INT8,Silicon,L3 NPU,,,,,x,,dossantos1412nmLinuxSMPCapable2024,10.1109/ISSCC49657.2024.10454572
-MANIC,22nm,0.57,48.9,1.05,2,0.512,256,1,FP32,Silicon,Vector,,x,,,,,gobieskiMANIC19Mu2023,10.1109/ISCAS46773.2023.10181809
-Zhou et al.,28nm,-,50,-,13,3690,285,144000 1--bit cells,INT2,Simulation,ISA,x,,,,,x,zhouRISCVBasedFullyParallel2023,10.1109/AICAS57966.2023.10168630
-speedAI240,7nm,-,1300,-,67000,2000000,30000,372000,FP8,Simulation,ISA,x,,,,,,snelgroveSpeedAI2402Petaflop30Teraflops2023,10.1109/MM.2023.3255864
-DECADES,12nm,62,911,1.2,-,1460,-,60,INT64,Silicon,ISA,x,,,,,,gaoDECADES67mm246TOPS2023a,10.1109/CICC57935.2023.10121257
-CIFER,12nm,16,1195,0.8,1792,15.54,6.63,14,FP32,Silicon,ISA,x,,,,,,liCIFERCacheCoherent12nm2023,10.1109/LSSC.2023.3303111
-RDCIM,55nm,9.8,200,1.2,43,2820,66300,524288 1--bit cells,INT4,Silicon,ISA,x,,,,,x,yiRDCIMRISCVSupported2024d,10.1109/TCSI.2024.3350664
-YUN,65nm,6,280,1.2,650,2.83,4,4,FP64,Silicon,Vector,,x,,,,,perottiYunOpenSource64Bit2023,10.1109/TCSII.2023.3292579
-Shaheen,22nm,9,500,0.8,195,26,133,8,INT2,Silicon,ISA,x,,x,,,,valenteHeterogeneousRISCVBased2024,10.1109/TCSI.2024.3359044
-Xvpfloat,7nm,0.14,1250,0.675,-,-,-,1,FP64,Pre-silicon,Vector,,x,,,,,guthmullerXvpfloatRISCVISA2024,10.1109/TC.2024.3383964
-FlexNN,22nm,0.55,463,0.65,26,85,3260,128,INT2,Pre-silicon,ISA,x,,,,,,nadaliniTOPSRISCVParallel2023a,10.1109/ISVLSI59464.2023.10238679
-Metis AIPU,12nm,144,800,0.68,3490,52400,15000,-,INT8,Silicon,L2 NPU,,,,x,,x,hager11MetisAIPU2024,10.1109/ISSCC49657.2024.10454395
-Siracusa,16nm,16 (10.1 cluster),360,0.8,332,698,2100,10368 1x8--bit,INT8,Silicon,L1 NPU,x,,x,,,,prasadSiracusa16Nm2024,10.1109/JSSC.2024.3385987
-Occamy,12nm,146 (51.5 compute),1000,0.8,23000,6140,267,432,FP8,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068
-DIANA,22nm,10.24,250,0.8,31,18600,600000,256,Analog,Silicon,L2 NPU,,,,x,,x,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064
-YUN,65nm,6,280,1.2,650,22.9,37,4,INT8,Silicon,Vector,,x,,,,,perottiYunOpenSource64Bit2023,10.1109/TCSII.2023.3292579
+﻿Accelerator,Tech [nm],Area [mm2],Freq [MHz],Voltage [V],Power [mW],Perf [GOPS],Energy Efficiency [GOPS/W],,Data Type,Maturity,Dominant Kind,ISA,Vector,L1 NPU,L2 NPU,L3 NPU,IMC,Zotero key,DOI,Notes
+SNCPU,65nm,4.47,400,1,116,75.9,655,100,INT8,Silicon,L2 NPU,,,,x,,,juSystolicNeuralCPU2023,10.1109/JSSC.2022.3214170,
+Dustin,65nm,10,205,1.2,156,33.6,215,128,INT2 x INT4,Silicon,ISA,x,,,,,,ottaviDustin16CoresParallel2023,10.1109/TCSI.2023.3254810,
+Darkside,65nm,3.85,200,1.2,89.1,12.6,152,32,FP16,Silicon,L1 NPU,x,,x,,,,garofaloDARKSIDEHeterogeneousRISCV2022,10.1109/OJSSCS.2022.3210082,
+SamurAI,28nm,4.52,350,0.9,94.7,36,380,64,INT8,Silicon,L2 NPU,,,,x,,,miro-panadesSamurAIVersatileIoT2022,10.1109/JSSC.2022.3198505,
+Gemmini,22nm,1.03,1000,-,-,-,-,256,INT8,Pre-silicon,L2 NPU,,,,x,,,gencGemminiEnablingSystematic2021,10.1109/DAC18074.2021.9586216,
+AVA,22nm,3.9,-,-,-,-,-,-,FP64,Pre-silicon,Vector,,x,,,,,lazoAdaptableRegisterFile2022,10.1109/HPCA53966.2022.00063,
+Marsellus,22nm,18.7 (1.9 cluster),420,0.8,123,637,7600,10368 1--bit,INT2,Silicon,L1 NPU,x,,x,,,,conti22124TOPS2023,10.1109/JSSC.2023.3318301,
+Garofalo et al.,22nm,30,500,0.8,150,958,6390,36 (DW),Analog,Pre-silicon,L1 NPU,x,,x,,,x,garofaloHeterogeneousInMemoryComputing2022,10.1109/JETCAS.2022.3170152,
+DIANA,22nm,10.24,250,0.8,132,230,1740,256,INT8,Silicon,L2 NPU,,,,x,,,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064,
+TinyVers,22nm,6.25,150,0.8,20,17.6,863,64,INT8,Silicon,L2 NPU,,,,x,,,jainTinyVersTinyVersatile2023,10.1109/JSSC.2023.3236566,
+Kraken,22nm,9,330,0.8,300,75,750,128,INT2,Silicon,ISA,x,,x,,,,dimauroKrakenDirectEvent2022,10.48550/arXiv.2209.01065,
+Vega,22nm,12,450,0.8,49.4,32.2,651,27,INT8,Silicon,ISA,x,,x,,,,rossiVegaTenCoreSoC2022,10.1109/JSSC.2021.3114881,
+RedMulE,22nm,0.73,613,0.8,193,117,608,96,FP16,Pre-silicon,L1 NPU,,,x,,,,tortorellaRedMuleMixedPrecisionMatrixMatrix2023,10.48550/arXiv.2301.03904,
+Spatz,22nm,20,594,0.8,1070,285,266,256,INT32,Pre-silicon,Vector,,x,,,,,cavalcanteSpatzCompactVector2022,10.1145/3508352.3549367,
+Manticore,22nm,888,500,0.6,200,25,188,24,FP64,Pre-silicon,ISA,x,,,,,,zarubaManticore4096CoreRISCV2021,10.1109/MM.2020.3045564,
+Gonzalez et al.,22nm,16,961,-,-,-,106.1,256,INT8,Silicon,L3 NPU,,,,,x,,gonzalez16mm106GOPS2021,10.1109/ESSCIRC53450.2021.9567768,
+Vitruvius+,22nm,1.3,1400,0.8,459,21.7,47.3,8,FP64,Pre-silicon,Vector,,x,,,,,minerviniVitruviusAreaEfficientRISCV2023,10.1145/3575861,
+Ara,22nm,10735 kGE,1040,0.8,794,32.4,40.8,16,FP64,Pre-silicon,Vector,,x,,,,,cavalcanteAra1GHzScalable2020,10.1109/TVLSI.2019.2950087,
+NewAra,22nm,0.81,1340,0.8,280,10.4,37.1,4,FP64,Pre-silicon,Vector,,x,,,,,perottiNewAraVector2022,10.1109/ASAP54787.2022.00017,
+Archimedes,22nm,3.38,270,0.65,112,1198,10.6,5184,INT2 x INT8,Pre-silicon,L1 NPU,,,x,,,,prasadSpecializationMeetsFlexibility,10.1109/DAC56929.2023.10247945,
+Celerity,16nm,25,1050,-,1900,-,-,496,INT32,Silicon,ISA,x,,,,,,davidsonCelerityOpenSource511Core2018,10.1109/MM.2018.022071133,
+Simba,16nm,6,161,0.42,-,-,9100,1024,INT8,Silicon,L2 NPU,,,,x,,,shaoSimbaScalingDeepLearning2019,10.1145/3352460.3358302,
+ESP,12nm,21.6,1520,1,1830,-,-,3x NVDLA,INT8,Silicon,L3 NPU,,,,,x,,jia12nmAgileDesignedSoC2022,10.1109/ESSCIRC55480.2022.9911456,
+Tenstorrent,12nm,477,-,-,-,92000,-,-,FP16,Silicon,ISA,x,,,,,,vasiljevicComputeSubstrateSoftware2021,10.1109/MM.2021.3061912,
+Tambe et al.,12nm,4.59,717,1,111,734,6612,,FP4,Silicon,L2 NPU,,,,x,,,tambe2212nm182023,10.1109/ISSCC42615.2023.10067817,
+exSDOTP,12nm,0.52,1260,0.8,278,160,575,16,FP8,Pre-silicon,ISA,x,,,,,,bertacciniMiniFloatNNExSdotpISA2022,10.1109/ARITH54963.2022.00010,
+Esperanto,7nm,570,1000,-,20000,139000,6.95,69632,INT8,Silicon,ISA,x,,,,,,ditzelAcceleratingMLRecommendation2022,10.1109/MM.2022.3140674,
+Bruschi et al.,5nm,480,-,-,3070,20000,6500,3.35E+07,Analog,Simulation,L1 NPU,x,,x,,,x,bruschiEndtoEndDNNInference2022,10.48550/arXiv.2211.12877,
+CNC,4nm,1.92,1150,0.85,510,75.8,149,512,INT8,Silicon,ISA,x,,,,,,chenEightCoreRISCVProcessor2022,10.1109/JSSC.2022.3228765,
+Siracusa,16nm,16 (10.1 cluster),360,0.8,332,1950,7000,10368 1x8--bit,INT2 x INT8,Silicon,L1 NPU,x,,x,,,,prasadSiracusa16Nm2024,10.1109/JSSC.2024.3385987,
+Occamy,12nm,146 (51.5 compute),1000,0.8,23000,770,28.1,432,FP64,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068,
+Vecim,65nm,4,250,1,110,25.3,230,4,FP16,Silicon,Vector,,x,,,,x,wang30Vecim2892024,10.1109/ISSCC49657.2024.10454387,
+Dos Santos et al.,12nm,64,1600,1,4330,-,-,4x NVDLA,INT8,Silicon,L3 NPU,,,,,x,,dossantos1412nmLinuxSMPCapable2024,10.1109/ISSCC49657.2024.10454572,
+MANIC,22nm,0.57,48.9,1.05,2,0.512,256,1,FP32,Silicon,Vector,,x,,,,,gobieskiMANIC19Mu2023,10.1109/ISCAS46773.2023.10181809,
+Zhou et al.,28nm,-,50,-,13,3690,285,144000 1--bit cells,INT2,Simulation,ISA,x,,,,,x,zhouRISCVBasedFullyParallel2023,10.1109/AICAS57966.2023.10168630,
+speedAI240,7nm,-,1300,-,67000,2000000,30000,372000,FP8,Simulation,ISA,x,,,,,,snelgroveSpeedAI2402Petaflop30Teraflops2023,10.1109/MM.2023.3255864,
+DECADES,12nm,62,911,1.2,-,1460,-,60,INT64,Silicon,ISA,x,,,,,,gaoDECADES67mm246TOPS2023a,10.1109/CICC57935.2023.10121257,
+CIFER,12nm,16,1195,0.8,1792,15.54,6.63,14,FP32,Silicon,ISA,x,,,,,,liCIFERCacheCoherent12nm2023,10.1109/LSSC.2023.3303111,
+RDCIM,55nm,9.8,200,1.2,43,2820,66300,524288 1--bit cells,INT4,Silicon,ISA,x,,,,,x,yiRDCIMRISCVSupported2024d,10.1109/TCSI.2024.3350664,
+YUN,65nm,6,280,1.2,400,2.2,5.5,4,FP64,Silicon,Vector,,x,,,,,perottiYunOpenSource64Bit2023,10.1109/TCSII.2023.3292579,Extracted from Fig. 4 @ 1.2V (as 1.4V would be penalizing in energy efficiency)
+Shaheen,22nm,9,500,0.8,195,26,133,8,INT2,Silicon,ISA,x,,x,,,,valenteHeterogeneousRISCVBased2024,10.1109/TCSI.2024.3359044,
+Xvpfloat,7nm,0.14,1250,0.675,-,-,-,1,FP64,Pre-silicon,Vector,,x,,,,,guthmullerXvpfloatRISCVISA2024,10.1109/TC.2024.3383964,
+FlexNN,22nm,0.55,463,0.65,26,85,3260,128,INT2,Pre-silicon,ISA,x,,,,,,nadaliniTOPSRISCVParallel2023a,10.1109/ISVLSI59464.2023.10238679,
+Metis AIPU,12nm,144,800,0.68,3490,52400,15000,-,INT8,Silicon,L2 NPU,,,,x,,x,hager11MetisAIPU2024,10.1109/ISSCC49657.2024.10454395,
+Siracusa,16nm,16 (10.1 cluster),360,0.8,332,698,2100,10368 1x8--bit,INT8,Silicon,L1 NPU,x,,x,,,,prasadSiracusa16Nm2024,10.1109/JSSC.2024.3385987,
+Occamy,12nm,146 (51.5 compute),1000,0.8,23000,6140,267,432,FP8,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068,
+DIANA,22nm,10.24,250,0.8,31,18600,600000,256,Analog,Silicon,L2 NPU,,,,x,,x,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064,
+YUN,65nm,6,280,1.2,270,15,55,4,INT8,Silicon,Vector,,x,,,,,perottiYunOpenSource64Bit2023,10.1109/TCSII.2023.3292579,Extracted from Fig. 4 @ 1.2V (as 1.4V would be penalizing in energy efficiency)
