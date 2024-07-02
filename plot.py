@@ -125,7 +125,7 @@ def plot_plotly(dataframe):
         hover_name=dfclean.columns[0], 
         log_x=True, 
         log_y=True,
-        title="Interactive Data Plot",
+        title="Log-Log Performance vs Power plot for RISC-V-based Deep Learning accelerators",
         color=dfclean.columns[10],  # Assuming this column represents maturity
         symbol=dfclean.columns[9],  # Assuming this column represents the style labels
         custom_data=['id'],  # Add the 'id' column as custom data

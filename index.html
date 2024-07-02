@@ -16,6 +16,9 @@
         <iframe id="plot-frame" src="plot.html" width="100%" height="600px" frameBorder="0"></iframe>
     </section>
     <section id="plot-method">
+        <h5>Objectives</h5>
+        <p>The main goal of this page is to report performance, power, and other relevant metrics of a selection of RISC-V based architectures that are targeted or anyways suited for extreme-exge, embedded, mobile or high-performance tasks related to Deep Learning, including both inference and training. Particular relevance is given to architectures that have been prototyped in silicon.</p>
+        <p>In the wide world of DL-dedicated architectures, RISC-V-based ones constitute a large and very interesting subset that couples innovation at ISA, microarchitecture, and system architecture level with novelty in the tasks that are performed.</p>
         <h5>Methodology</h5>
         <p>For consistency, performance, power, and energy efficiency are evaluated in the nominal operating point: notice that this means usually the chart and table <em>do not report the peak efficiency</em> of the original publication, which in most cases uses a more efficient, lower-performance operating point. In at least one case (YUN), the nominal operating point is also not the  highest-performance one, which is obtained by means of over-volting. Whenever one of the performance/power/efficiency triad is missing, it is derived from the other two. We consider 1 MAC = 2 OPs in all reported precision types. In case of multiple precisions reported, one or more representative ones were selected. </p>
         <p>We distinguish between three "maturities": <em>silicon</em>, <em>pre-silicon</em>, and <em>simulation</em>. We report as <em>silicon</em> those prototypes or products for which our source (typically, an academic paper) reports measurements (performance, power, area) and typically a picture of the fabricated chip (e.g., Siracusa). We report as <em>pre-silicon</em> all architectures for which a detailed analysis of performance, power, and area has been performed through logic and physical synthesis (e.g., Archimedes). Finally, we consider <em>simulation</em> all architectures that are explicitly modeling a system (e.g., Bruschi&nbsp;et&nbsp;al.) as well as those for which our source does not report enough information to understand if logic and physical synthesis where performed.</p>
@@ -34,10 +37,12 @@
           }
         </blockquote>
         </p>
-    </section>
-    <section id="plot-info">
+        <h5>Full table of RISC-V architectures</h5>
         <pre id="info-content"></pre>
     </section>
+    <!-- <section id="plot-info">
+        <pre id="info-content"></pre>
+    </section> -->
     <!-- <div id="static-plot-container">
     </div> -->
     <script src="script.js"></script>

@@ -10,7 +10,7 @@ body {
 }
 
 #bibtex {
-    font-family: monospace
+    font-family: 'Courier New', Courier, monospace
 }
 
 #plot-info, #plot-method {
