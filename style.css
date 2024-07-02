@@ -9,6 +9,10 @@ body {
     margin-top: 20px;
 }
 
+#bibtex {
+    font-family: monospace
+}
+
 #plot-info, #plot-method {
     text-align: left;
     font-size: 11pt;
