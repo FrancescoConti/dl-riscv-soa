@@ -13,11 +13,11 @@ Kraken,22nm,9,330,0.8,300,75,750,128,INT2,Silicon,ISA,x,,x,,,,dimauroKrakenDirec
 Vega,22nm,12,450,0.8,49.4,32.2,651,27,INT8,Silicon,ISA,x,,x,,,,rossiVegaTenCoreSoC2022,10.1109/JSSC.2021.3114881,
 RedMulE,22nm,0.73,613,0.8,193,117,608,96,FP16,Pre-silicon,L1 NPU,,,x,,,,tortorellaRedMuleMixedPrecisionMatrixMatrix2023,10.48550/arXiv.2301.03904,
 Spatz,22nm,20,594,0.8,1070,285,266,256,INT32,Pre-silicon,Vector,,x,,,,,cavalcanteSpatzCompactVector2022,10.1145/3508352.3549367,
-Manticore,22nm,888,500,0.6,200,25,188,24,FP64,Pre-silicon,ISA,x,,,,,,zarubaManticore4096CoreRISCV2021,10.1109/MM.2020.3045564,
+Manticore (Baikonur),22nm,9,1000,0.9,950,54,57,24,FP64,Silicon,ISA,x,,,,,,zarubaManticore4096CoreRISCV2021,10.1109/MM.2020.3045564,
 Gonzalez et al.,22nm,16,961,-,-,-,106.1,256,INT8,Silicon,L3 NPU,,,,,x,,gonzalez16mm106GOPS2021,10.1109/ESSCIRC53450.2021.9567768,
 Vitruvius+,22nm,1.3,1400,0.8,459,21.7,47.3,8,FP64,Pre-silicon,Vector,,x,,,,,minerviniVitruviusAreaEfficientRISCV2023,10.1145/3575861,
 Ara,22nm,10735 kGE,1040,0.8,794,32.4,40.8,16,FP64,Pre-silicon,Vector,,x,,,,,cavalcanteAra1GHzScalable2020,10.1109/TVLSI.2019.2950087,
-NewAra,22nm,0.81,1340,0.8,280,10.4,37.1,4,FP64,Pre-silicon,Vector,,x,,,,,perottiNewAraVector2022,10.1109/ASAP54787.2022.00017,
+New Ara,22nm,0.81,1340,0.8,280,10.4,37.1,4,FP64,Pre-silicon,Vector,,x,,,,,perottiNewAraVector2022,10.1109/ASAP54787.2022.00017,
 Archimedes,22nm,3.38,270,0.65,112,1198,10.6,5184,INT2 x INT8,Pre-silicon,L1 NPU,,,x,,,,prasadSpecializationMeetsFlexibility,10.1109/DAC56929.2023.10247945,
 Celerity,16nm,25,1050,-,1900,-,-,496,INT32,Silicon,ISA,x,,,,,,davidsonCelerityOpenSource511Core2018,10.1109/MM.2018.022071133,
 Simba,16nm,6,161,0.42,-,-,9100,1024,INT8,Silicon,L2 NPU,,,,x,,,shaoSimbaScalingDeepLearning2019,10.1145/3352460.3358302,
@@ -47,3 +47,4 @@ Siracusa,16nm,16 (10.1 cluster),360,0.8,332,698,2100,10368 1x8--bit,INT8,Silicon
 Occamy,12nm,146 (51.5 compute),1000,0.8,23000,6140,267,432,FP8,Silicon,ISA,x,,,,,,paulinOccamy432Core282024,10.48550/arXiv.2406.15068,
 DIANA,22nm,10.24,250,0.8,31,18600,600000,256,Analog,Silicon,L2 NPU,,,,x,,x,houshmandDIANAEndtoEndHybrid2023,10.1109/JSSC.2022.3214064,
 YUN,65nm,6,280,1.2,270,15,55,4,INT8,Silicon,Vector,,x,,,,,perottiYunOpenSource64Bit2023,10.1109/TCSII.2023.3292579,Extracted from Fig. 4 @ 1.2V (as 1.4V would be penalizing in energy efficiency)
+Paulin et al.,22nm,0.92,380,0.65,2.6,1.13,434,16,INT16,Pre-silicon,ISA,x,,,,,,paulinRNNBasedRadioResource2021,10.1109/TVLSI.2021.3093242,
