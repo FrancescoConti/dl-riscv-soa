@@ -113,7 +113,7 @@ def plot_plotly(dataframe):
     dfclean['id'] = dfclean.index
 
     # Define custom marker styles
-    style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
+    style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT16", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
     symbol_map = {s: i for i, s in enumerate(style)}
     color_map = {"silicon": "red", "pre-silicon": "green", "simulation": "blue"}
 
