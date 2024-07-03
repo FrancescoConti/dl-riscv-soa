@@ -215,7 +215,7 @@ def plot_matplotlib(dataframe):
     dfclean = dataframe.dropna(subset=[dataframe.columns[5], dataframe.columns[6]])
 
     sns.set_theme(style="whitegrid")
-    style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
+    style = ["FP64", "FP32", "FP16", "FP8", "FP4", "INT32", "INT16", "INT8", "INT4", "INT2 x INT8", "INT2 x INT4", "INT2", "Analog"]
     g = sns.relplot(data=dfclean, edgecolor="black", style=dfclean.columns[9], style_order=style, x=dfclean.columns[5], y=dfclean.columns[6], hue=dfclean.columns[10], s=100, label=dfclean.columns[1], palette=["red", "green", "blue"], height=6, aspect=2)
     g.set(xscale="log")
     g.set(yscale="log")
