@@ -1,6 +1,6 @@
 openpyxl
 numpy
-pandas
+pandas<3
 matplotlib
 seaborn
 adjustText
